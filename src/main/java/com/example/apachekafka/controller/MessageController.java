@@ -32,6 +32,8 @@ public class MessageController {
         kafkaProducer.sendMessage(message);
         return ResponseEntity.ok("message sent successfully");
     }
+    // to get data save in elastic
+
     @GetMapping("/getelastic")
     public List<WikiMediaElasticEntity> getAllDataInElasticSearch() throws IOException {
         return wikiMediaElasticSearchRepo.searchAllDocuments();
